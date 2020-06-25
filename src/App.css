@@ -1,38 +1,151 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+* {
+  font-family: 'Krona One', sans-serif;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+body{
+  /* background-image: url('images/city.jpg'); */
+  color: #8DB9D6;
+  font-size: 20px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: rgb(3, 10, 24);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.page{
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  border-bottom: 1px solid white;
+  z-index: 1;
+}
+
+.header-right {
+  padding: 2%;
+  float: right;
+  display: flex;
+  flex-direction: row;
+}
+
+.header-options {
+  padding: 10px;
+}
+
+.logo{
+  float: left;
+  padding: 10px 10px 10px 20px;
+  font-family: 'Monoton', cursive;
+  font-size: 50px;
+}
+
+.page-body{
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  left: 40%;
+  top: 50%; 
+  margin-left: -150px;
+  margin-top: -150px;
+}
+
+.big-font{
+  font-size: 40px;
+}
+
+.small-font{
+  padding: 5%;
+  font-size: 20px;
+}
+
+/* Stars */
+
+.star {
+  fill: white;
+  animation: pulse var(--star-animation-duration, 1000ms) infinite backwards,
+    glowing var(--star-animation-glow-duration, 1000ms) infinite alternate backwards;
+  animation-delay: var(--star-animation-delay, 0);
+}
+
+.star-parallax {
+  transform: translate(0, calc(-1px * var(--translateScrollY) * var(--parallax-intensity, 200) * 1/var(--parallax-depth, 1) ));
+transition: transform .1s;
+will-change: transition;
+}
+
+.shooting-star {
+  fill: white;
+  transform-origin: 125px 0;
+  animation: 5s orbitAnimation infinite linear, 5s shootStarGlow infinite;
+}
+
+#svgCanvas {
+  height: 200vh;
+}
+
+
+body {
+  margin: 0;
+  background-color: #202840;
+}
+
+#btnDebug {
+  position: fixed;
+  z-index:1;
+  top: 10px;
+  left: 10px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
   }
-  to {
-    transform: rotate(360deg);
+
+  30% {
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+
+  70% {
+    transform: scale3d(0.2, 0.2, 0.2);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
   }
 }
+
+@keyframes glowing {
+  0% {
+    opacity: var(--star-brightness, 1);
+  }
+
+  100% {
+    opacity: calc(var(--star-brightness, 1) * 0.5);
+  }
+}
+
+@keyframes orbitAnimation {
+  0% {
+    transform: translate(-125px, 0) rotate3d(0, 0, 1, 360deg);
+  }
+  100% {
+    transform: translate(-125px, 0) rotate3d(0, 0, 1, 270deg);
+  }
+}
+
+
+@keyframes shootStarGlow {
+  0% {
+    opacity: 0
+  }
+
+  50%, 50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
