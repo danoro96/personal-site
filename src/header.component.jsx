@@ -19,13 +19,13 @@ export default  function Header() {
   
       <Row>
   
-        <Col className='logo' onClick={e => route()}>
+        <Col className='logo' onClick={e => route(null)}>
           DACO
         </Col>
   
         <Col className='header-right'>
           <Row> 
-            <Col className='header-options' onClick={e => route()}>
+            <Col className='header-options' onClick={e => route(null)}>
               Home
             </Col>
   

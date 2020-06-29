@@ -20,7 +20,6 @@ function App() {
       <Container>
 
         <div id='back' />
-        <div id='front' />
 
         <Header />
 
