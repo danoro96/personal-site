@@ -12,7 +12,7 @@ export default  function Header() {
   
     function route(event) {
       
-      history.push(event ? event.target.innerHTML.toLowerCase() : 'home')
+      history.push(event ? event.target.innerHTML.toLowerCase() : '')
     }
   
     return (
