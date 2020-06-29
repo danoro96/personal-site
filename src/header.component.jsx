@@ -25,7 +25,7 @@ export default  function Header() {
   
         <Col className='header-right'>
           <Row> 
-            <Col className='header-options' onClick={e => route(e)}>
+            <Col className='header-options' onClick={e => route()}>
               Home
             </Col>
   
